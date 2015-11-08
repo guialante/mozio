@@ -3,6 +3,10 @@ mozio
 
 This project try to achieve Mozio backend developer Test.
 
+This project Layout is created using cookiecutter-django_
+
+.. _cookiecutter-django: https://github.com/pydanny/cookiecutter-django
+
 Getting up and running
 ----------------------
 
