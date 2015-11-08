@@ -3,7 +3,32 @@ mozio
 
 This project try to achieve Mozio backend developer Test.
 
-This project uses a Postgres Database with postgis extension activate to allow possible store polygons.
+Getting up and running
+----------------------
+
+The steps below will get you up and running with a local development environment. We assume you have the following installed:
+
+* pip
+* virtualenv
+* PostgreSQL with postgis
+
+First make sure to create and activate a virtualenv_, then open a terminal at the project root and install the requirements for local development::
+
+    $ pip install -r requirements/local.txt
+
+.. _virtualenv: http://docs.python-guide.org/en/latest/dev/virtualenvs/
+
+Then, create a PostgreSQL database and add the database configuration using the  ``dj-database-url`` app pattern: ``postgres://db_owner:password@dbserver_ip:port/db_name`` either:
+
+* in the ``config.settings.common.py`` setting file,
+* or in the environment variable ``DATABASE_URL``
+
+
+You can now run the usual Django ``migrate`` and ``runserver`` command::
+
+    $ python manage.py migrate
+
+    $ python manage.py runserver
 
 
 How to Use
