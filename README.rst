@@ -3,7 +3,7 @@ mozio
 
 This project try to achieve Mozio backend developer Test.
 
-This project uses a Postgres Database with postgis activate to allow possible store polygons point on it.
+This project uses a Postgres Database with postgis extension activate to allow possible store polygons.
 
 
 How to Use
