@@ -6,15 +6,11 @@ This project try to achieve Mozio backend developer Test.
 This project uses a Postgres Database with postgis activate to allow possible store polygons point on it.
 
 
-Basic Commands
+How to Use
 --------------
+To create a **user account**, just go to Sign Up and fill out the form. Once you submit it.
 
-Setting Up Your Users
-^^^^^^^^^^^^^^^^^^^^^
-
-To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it.
-
-After being login in on the navigation bar on the right side are the Services Area List, and Services Area Create.
+After being login in, on the navigation bar on the right side are the Services Area List, and Services Area Create.
 
 In Services Area Create, you can create one clicking on the map to localize markers as vertex of your polygon
 service area, the point will be showing on the right side of the page, with the Latitude and Longitude of each one.
