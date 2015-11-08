@@ -1,0 +1,3 @@
+[run]
+include = mozio/*
+omit = *migrations*, *tests*
