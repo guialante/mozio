@@ -10,7 +10,7 @@ The steps below will get you up and running with a local development environment
 
 * pip
 * virtualenv
-* PostgreSQL with postgis
+* PostgreSQL 9.3 or superior with Postgis Extension
 
 First make sure to create and activate a virtualenv_, then open a terminal at the project root and install the requirements for local development::
 
