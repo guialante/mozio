@@ -11,7 +11,7 @@ class LocationMixin(object):
 
     def get_context_data(self, **kwargs):
         context = super(LocationMixin, self).get_context_data(**kwargs)
-        visitor_ip = self.request.META.get('HTTP_X_FORWARDED_FOR', None)
+        visitor_ip = self.request.META.get('REMOTE_ADDR', None)
         latlng = {'lat': 37.774929, 'lng': -122.419416}
         if visitor_ip is not None:
             g = geocoder.ip(visitor_ip)
