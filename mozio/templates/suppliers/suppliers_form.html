@@ -45,9 +45,11 @@
       var markers = [];
       var path = new google.maps.MVCArray;
       var wicketReader = new Wkt.Wkt();
+      var lat = {{ latlng.lat|stringformat:"f" }};
+      var lng = {{ latlng.lng|stringformat:"f" }};
 
       function initialize() {
-        var uluru = new google.maps.LatLng(3.451647, -76.531985);
+        var uluru = new google.maps.LatLng(lat, lng);
 
         map = new google.maps.Map(document.getElementById("map"), {
           zoom: 14,

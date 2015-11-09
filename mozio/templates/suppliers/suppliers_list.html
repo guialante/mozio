@@ -20,11 +20,13 @@
     <script>
         var map;
         var polygons = []
+        var lat = {{ latlng.lat|stringformat:"f" }};
+        var lng = {{ latlng.lng|stringformat:"f" }};
         $(document).ready(function() {
             map = new GMaps({
                 el: '#map',
-                lat: 3.451647,
-                lng: -76.531985,
+                lat: lat,
+                lng: lng,
                 zoom: 14,
                 click: function(e){
                     for(var i = 0; i < polygons.length; i++) {

@@ -8,9 +8,10 @@ from braces.views import LoginRequiredMixin
 
 from .forms import ServiceAreaForm
 from .models import ServiceArea
+from .viewmixins import LocationMixin
 
 
-class ServiceAreaListView(LoginRequiredMixin, ListView):
+class ServiceAreaListView(LocationMixin, LoginRequiredMixin, ListView):
     """
         This view is used to load all service area associated to a user in the front end, and allow
         user to find a point in a bounded box in the service areas loaded.
@@ -24,7 +25,7 @@ class ServiceAreaListView(LoginRequiredMixin, ListView):
         return queryset
 
 
-class ServiceAreaCreateView(LoginRequiredMixin, FormView):
+class ServiceAreaCreateView(LocationMixin, LoginRequiredMixin, FormView):
     """
         This view is used to create a service area, and show the last service area created.
     """
