@@ -51,5 +51,5 @@ you will be notify if the point is or not inside a service area, services areas 
 
 
 .. _SignUp: http://ec2-52-33-128-23.us-west-2.compute.amazonaws.com/accounts/signup/
-.. _List:: http://ec2-52-33-128-23.us-west-2.compute.amazonaws.com/suppliers/service-area/list/
+.. _List: http://ec2-52-33-128-23.us-west-2.compute.amazonaws.com/suppliers/service-area/list/
 .. _Create: http://ec2-52-33-128-23.us-west-2.compute.amazonaws.com/suppliers/service-area/add/
