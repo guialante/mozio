@@ -15,7 +15,7 @@
       <div class="col-md-3">
           <span id="result">
               {% if object_list|length_is:"0" %}
-                There are not service areas go to <a href="{% url 'suppliers:service_area_create' %}">Create Service Area</a>
+                There are not service areas, go to <a href="{% url 'suppliers:service_area_create' %}">Create Service Area</a>
               {% endif %}
           </span>
       </div>
