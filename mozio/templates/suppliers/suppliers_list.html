@@ -1,9 +1,15 @@
- {% extends "base.html" %}
-{% load staticfiles %}c
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block css %}
+    {{ block.super }}
+    <link href="{% static 'css/map.css' %}" rel="stylesheet">
+{% endblock %}
 
  {% block content %}
     <div class="row">
       <div class="col-md-9">
+          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
           <div id="map" style="display: block; height: 500px;"></div>
       </div>
       <div class="col-md-3">
@@ -15,7 +21,7 @@
 
 {% block javascript %}
     {{ block.super }}
-    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="{% static 'js/gmaps.min.js' %}"></script>
     <script>
         var map;
@@ -53,6 +59,42 @@
                   });
                 polygons.push(polygon);
             {% endfor %}
+
+            console.log(map);
+
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            map.addListener('bounds_changed', function() {
+              searchBox.setBounds(map.getBounds());
+
+            searchBox.addListener('places_changed', function() {
+              var places = searchBox.getPlaces();
+
+              if (places.length == 0) {
+                return;
+              }
+              var bounds = new google.maps.LatLngBounds();
+              places.forEach(function(place) {
+
+
+                if (place.geometry.viewport) {
+
+                  bounds.union(place.geometry.viewport);
+                } else {
+                  bounds.extend(place.geometry.location);
+                }
+              });
+              map.fitBounds(bounds);
+            });
+
+
+
+        });
+
+
+
         })
     </script>
 
